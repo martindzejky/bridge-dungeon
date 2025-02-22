@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/spawner.gd" id="1_7eehl"]
 [ext_resource type="PackedScene" uid="uid://fn3deb0umllx" path="res://objects/imp.tscn" id="2_kpfyt"]
-[ext_resource type="PackedScene" uid="uid://cygangvc8tn3e" path="res://sounds/imper.tscn" id="3_5ov7k"]
+[ext_resource type="PackedScene" uid="uid://cygangvc8tn3e" path="res://objects/imper.tscn" id="3_5ov7k"]
 [ext_resource type="PackedScene" uid="uid://bsutu0164f0pk" path="res://objects/barrel.tscn" id="4_db0uq"]
 [ext_resource type="PackedScene" uid="uid://ulaq0ac0iwra" path="res://objects/coin.tscn" id="5_6pdy3"]
 
