@@ -47,3 +47,12 @@ func onPlayerHit():
         $animator.play(previousAnimation)
     else:
         $animator.play('dead')
+
+func onCollision(area):
+    var other := area.get_parent() as Node2D
+
+    if other.is_in_group('hit'):
+        GlobalState.takePlayerHealth()
+
+    if other is Imp:
+        other.onHitPlayer()

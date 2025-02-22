@@ -21,6 +21,8 @@ func spawnTower(offset = 0.0):
     rightTower.position.y += offset
     add_child(rightTower)
 
+    $timer.wait_time = 3.0 / 40.0 * GlobalState.playerSpeed
+
 func prespawnTowers():
     var offset := 0
 

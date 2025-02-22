@@ -1,4 +1,14 @@
-[gd_scene format=3 uid="uid://bpxgy8l34s0t8"]
+[gd_scene load_steps=3 format=3 uid="uid://bpxgy8l34s0t8"]
+
+[ext_resource type="Script" path="res://objects/spawner.gd" id="1_7eehl"]
+[ext_resource type="PackedScene" uid="uid://fn3deb0umllx" path="res://objects/imp.tscn" id="2_kpfyt"]
 
 [node name="spawner" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_7eehl")
+impScene = ExtResource("2_kpfyt")
+
+[node name="impTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="impTimer" to="." method="spawnImp"]

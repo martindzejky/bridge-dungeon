@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfnemgktx358p"]
+[gd_scene load_steps=12 format=3 uid="uid://dfnemgktx358p"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_cnca8"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="1_k63ok"]
@@ -116,7 +116,10 @@ _data = {
 "running": SubResource("Animation_2hsp0")
 }
 
-[node name="player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmiyj"]
+radius = 5.0
+
+[node name="player" type="Node2D" groups=["player"]]
 process_mode = 3
 script = ExtResource("1_cnca8")
 hitSound = ExtResource("2_rbvaa")
@@ -136,8 +139,15 @@ autoplay = "running"
 [node name="listener" type="AudioListener2D" parent="."]
 current = true
 
-[node name="audioStep" type="AudioStreamPlayer2D" parent="."]
+[node name="audioStep" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 
-[node name="audioHit" type="AudioStreamPlayer2D" parent="."]
+[node name="audioHit" type="AudioStreamPlayer" parent="."]
 volume_db = -4.0
+
+[node name="collider" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="collider"]
+shape = SubResource("CircleShape2D_gmiyj")
+
+[connection signal="area_entered" from="collider" to="." method="onCollision"]
