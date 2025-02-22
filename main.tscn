@@ -12,6 +12,10 @@
 [node name="main" type="Node"]
 
 [node name="ui" parent="." instance=ExtResource("1_4qq6n")]
+layer = 3
+
+[node name="ui-effects" type="CanvasLayer" parent="." groups=["ui-effects"]]
+layer = 2
 
 [node name="camera" type="Camera2D" parent="."]
 
