@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpxgy8l34s0t8" path="res://objects/spawner.tscn" id="5_nd4bj"]
 [ext_resource type="AudioStream" uid="uid://bqsuq4va7dbhp" path="res://music/stream.tres" id="6_qbnj1"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_81bax"]
-[ext_resource type="AudioStream" uid="uid://t6odlsyftrfr" path="res://music/ending.wav" id="8_eptnq"]
+[ext_resource type="AudioStream" uid="uid://bsbyweiocrrsu" path="res://music/ending.mp3" id="8_voyi7"]
 
 [node name="main" type="Node"]
 
@@ -42,4 +42,4 @@ stream = ExtResource("6_qbnj1")
 volume_db = -8.0
 autoplay = true
 script = ExtResource("7_81bax")
-endingMusic = ExtResource("8_eptnq")
+endingMusic = ExtResource("8_voyi7")

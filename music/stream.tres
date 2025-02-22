@@ -1,14 +1,14 @@
 [gd_resource type="AudioStreamInteractive" load_steps=3 format=3 uid="uid://bqsuq4va7dbhp"]
 
-[ext_resource type="AudioStream" uid="uid://dteglrxhdev1a" path="res://music/intro.wav" id="1_dlrbt"]
-[ext_resource type="AudioStream" uid="uid://b313lindrgqdg" path="res://music/loop.wav" id="2_hoqru"]
+[ext_resource type="AudioStream" uid="uid://xhaegpbp16lp" path="res://music/intro.mp3" id="1_fg7xb"]
+[ext_resource type="AudioStream" uid="uid://dn3n4226vh2d4" path="res://music/loop.mp3" id="2_d318i"]
 
 [resource]
 clip_count = 2
 clip_0/name = &"intro"
-clip_0/stream = ExtResource("1_dlrbt")
+clip_0/stream = ExtResource("1_fg7xb")
 clip_0/auto_advance = 1
 clip_0/next_clip = 1
 clip_1/name = &"loop"
-clip_1/stream = ExtResource("2_hoqru")
+clip_1/stream = ExtResource("2_d318i")
 clip_1/auto_advance = 0
