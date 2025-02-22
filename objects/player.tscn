@@ -145,7 +145,7 @@ autoplay = "running"
 current = true
 
 [node name="audioStep" type="AudioStreamPlayer" parent="."]
-volume_db = -10.0
+volume_db = -12.0
 
 [node name="audioHit" type="AudioStreamPlayer" parent="."]
 volume_db = -4.0
