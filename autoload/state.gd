@@ -15,8 +15,14 @@ var playerCoins := 0
 signal onPlayerCoinUpdate
 
 func _process(delta):
-    playerSpeed += delta * 2.0
     distanceRun += delta * playerSpeed
+
+    if playerSpeed > 220:
+        playerSpeed += delta * 1.2
+    if playerSpeed > 100:
+        playerSpeed += delta * 1.6
+    else:
+        playerSpeed += delta * 2.0
 
 func updatePlayerHealth(health: int):
     var previous := playerHealth
@@ -26,6 +32,13 @@ func updatePlayerHealth(health: int):
         onPlayerHealed.emit()
     elif playerHealth < previous:
         onPlayerHit.emit()
+
+        # decrease the speed a little
+        if playerSpeed <= 80:
+            playerSpeed = 40
+        else:
+            var diff := playerSpeed - 40
+            playerSpeed = 40 + diff * 0.4
 
     if playerHealth == 0:
         onPlayerDead.emit()
