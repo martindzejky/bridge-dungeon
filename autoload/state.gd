@@ -11,6 +11,9 @@ signal onPlayerDead
 # total distance run
 var distanceRun := 0.0
 
+var playerCoins := 0
+signal onPlayerCoinUpdate
+
 func _process(delta):
     playerSpeed += delta * 2.0
     distanceRun += delta * playerSpeed
@@ -32,3 +35,7 @@ func addPlayerHealth():
 
 func takePlayerHealth():
     updatePlayerHealth(playerHealth - 1)
+
+func addCoin():
+    playerCoins += 1
+    onPlayerCoinUpdate.emit()

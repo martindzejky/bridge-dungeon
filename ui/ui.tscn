@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm314qd0ikf8r"]
+[gd_scene load_steps=7 format=3 uid="uid://cm314qd0ikf8r"]
 
 [ext_resource type="PackedScene" uid="uid://dxybh7ybfi4li" path="res://ui/hearts.tscn" id="1_58neh"]
+[ext_resource type="PackedScene" uid="uid://c8ry4fga0b0kl" path="res://ui/coins.tscn" id="2_6talx"]
+[ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="2_wwd8o"]
+[ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="3_vbwm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3k35"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioqgx"]
+atlas = ExtResource("2_wwd8o")
+region = Rect2(32, 0, 16, 16)
 
 [node name="ui" type="CanvasLayer"]
 
@@ -11,33 +21,101 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="bar" type="Control" parent="full"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="margin" type="MarginContainer" parent="full/bar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="bar" type="HBoxContainer" parent="full/bar/margin"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="hearts" parent="full/bar/margin/bar" instance=ExtResource("1_58neh")]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="top" type="VBoxContainer" parent="full"]
+[node name="space" type="Control" parent="full/bar/margin/bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="coins" parent="full/bar/margin/bar" instance=ExtResource("2_6talx")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="end" type="Panel" parent="full" groups=["end"]]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_v3k35")
 
-[node name="margin" type="MarginContainer" parent="full/top"]
-layout_mode = 2
+[node name="margin" type="MarginContainer" parent="full/end"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="bar" type="HBoxContainer" parent="full/top/margin"]
+[node name="center" type="CenterContainer" parent="full/end/margin"]
 layout_mode = 2
-size_flags_vertical = 4
 
-[node name="hearts" parent="full/top/margin/bar" instance=ExtResource("1_58neh")]
+[node name="menu" type="VBoxContainer" parent="full/end/margin/center"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="distance" type="HBoxContainer" parent="full/end/margin/center/menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="icon" type="TextureRect" parent="full/end/margin/center/menu/distance"]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+texture = SubResource("AtlasTexture_ioqgx")
 
-[node name="space" type="Control" parent="full/top/margin/bar"]
+[node name="text" type="Label" parent="full/end/margin/center/menu/distance"]
 layout_mode = 2
-size_flags_horizontal = 3
+text = "100m"
+
+[node name="coins" type="HBoxContainer" parent="full/end/margin/center/menu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="icon" type="TextureRect" parent="full/end/margin/center/menu/coins"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_vbwm0")
+
+[node name="text" type="Label" parent="full/end/margin/center/menu/coins"]
+layout_mode = 2
+text = "3"

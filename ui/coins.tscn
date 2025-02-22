@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8ry4fga0b0kl"]
+
+[ext_resource type="Script" path="res://ui/coins.gd" id="1_kpwxj"]
+[ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="2_wvokg"]
+
+[node name="coins" type="HBoxContainer"]
+theme_override_constants/separation = 4
+script = ExtResource("1_kpwxj")
+
+[node name="icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_wvokg")
+
+[node name="text" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "0"
