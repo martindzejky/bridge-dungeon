@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm314qd0ikf8r"]
+
+[ext_resource type="PackedScene" uid="uid://dxybh7ybfi4li" path="res://ui/hearts.tscn" id="1_58neh"]
+
+[node name="ui" type="CanvasLayer"]
+
+[node name="full" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="top" type="Control" parent="full"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="margin" type="MarginContainer" parent="full/top"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 16.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="bar" type="HBoxContainer" parent="full/top/margin"]
+layout_mode = 2
+
+[node name="hearts" parent="full/top/margin/bar" instance=ExtResource("1_58neh")]
+layout_mode = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfnemgktx358p"]
+[gd_scene load_steps=6 format=3 uid="uid://dfnemgktx358p"]
 
+[ext_resource type="Script" path="res://objects/player.gd" id="1_cnca8"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="1_k63ok"]
 
 [sub_resource type="Animation" id="Animation_sl2vi"]
@@ -42,6 +43,7 @@ _data = {
 }
 
 [node name="player" type="Node2D"]
+script = ExtResource("1_cnca8")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
