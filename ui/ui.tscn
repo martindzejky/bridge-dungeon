@@ -1,18 +1,57 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm314qd0ikf8r"]
+[gd_scene load_steps=11 format=3 uid="uid://cm314qd0ikf8r"]
 
 [ext_resource type="PackedScene" uid="uid://dxybh7ybfi4li" path="res://ui/hearts.tscn" id="1_58neh"]
 [ext_resource type="PackedScene" uid="uid://c8ry4fga0b0kl" path="res://ui/coins.tscn" id="2_6talx"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="2_wwd8o"]
 [ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="3_vbwm0"]
+[ext_resource type="Script" path="res://ui/end.gd" id="3_ygh2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3k35"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_svbr4"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("full/end:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qntpk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("full/end:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0g62"]
+_data = {
+"RESET": SubResource("Animation_qntpk"),
+"fade": SubResource("Animation_svbr4")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioqgx"]
 atlas = ExtResource("2_wwd8o")
 region = Rect2(32, 0, 16, 16)
 
 [node name="ui" type="CanvasLayer"]
+process_mode = 3
 
 [node name="full" type="Control" parent="."]
 layout_mode = 3
@@ -59,6 +98,7 @@ size_flags_vertical = 4
 
 [node name="end" type="Panel" parent="full" groups=["end"]]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,6 +106,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v3k35")
+script = ExtResource("3_ygh2h")
+
+[node name="animation" type="AnimationPlayer" parent="full/end"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_c0g62")
+}
 
 [node name="margin" type="MarginContainer" parent="full/end"]
 layout_mode = 1

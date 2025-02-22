@@ -15,6 +15,10 @@ const bounds := 70
 @export var barrelTimerFrom := 4.0
 @export var barrelTimerTo := 8.0
 
+@export var coinScene: PackedScene
+@export var coinTimerFrom := 8.0
+@export var coinTimerTo := 20.0
+
 
 func spawnImp():
     assert(impScene, 'Imp scene is not assigned!')
@@ -39,10 +43,19 @@ func spawnImper():
     $imperTimer.wait_time = randf_range(imperTimerFrom, imperTimerTo) / (GlobalState.playerSpeed / 40.0)
 
 func spawnBarrel():
-    assert(barrelScene, 'barrel scene is not assigned!')
+    assert(barrelScene, 'Barrel scene is not assigned!')
 
     var barrel = barrelScene.instantiate()
     barrel.position.x = randf_range(-bounds, bounds)
     add_child(barrel)
 
     $barrelTimer.wait_time = randf_range(barrelTimerFrom, barrelTimerTo) / (GlobalState.playerSpeed / 40.0)
+
+func spawnCoin():
+    assert(coinScene, 'Coin scene is not assigned!')
+
+    var coin = coinScene.instantiate()
+    coin.position.x = randf_range(-bounds, bounds)
+    add_child(coin)
+
+    $coinTimer.wait_time = randf_range(coinTimerFrom, coinTimerTo) / (GlobalState.playerSpeed / 40.0)

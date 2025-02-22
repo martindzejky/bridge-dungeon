@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://ulaq0ac0iwra"]
+
+[ext_resource type="Script" path="res://objects/coin.gd" id="1_56jkc"]
+[ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="2_8ap1i"]
+[ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_01fs7"]
+[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_taebt"]
+[ext_resource type="AudioStream" uid="uid://cd7atbpe41k31" path="res://sounds/coin-random.tres" id="5_6c7g4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4bvo"]
+radius = 9.0
+
+[node name="coin" type="Node2D" groups=["coin"]]
+script = ExtResource("1_56jkc")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = ExtResource("2_8ap1i")
+
+[node name="moving" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("3_01fs7")
+
+[node name="exit" type="Node" parent="."]
+script = ExtResource("4_taebt")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_6c7g4")
+volume_db = -4.0
+
+[node name="collider" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="collider"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_f4bvo")
+
+[connection signal="finished" from="audio" to="audio" method="queue_free"]
