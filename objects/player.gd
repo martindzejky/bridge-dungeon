@@ -25,6 +25,8 @@ func onPlayerHit():
     assert(hitSound, 'Missing hit sound!')
     assert(deadSound, 'Missing hit sound!')
 
+    GlobalState.playerSpeed -= 10.0
+
     $audioHit.stream = hitSound
     $audioHit.play()
 

@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready():
     prespawnTowers()
+    print($timer.wait_time)
 
 func spawnTower(offset = 0.0):
     assert(towerScene, 'Missing tower scene!')
@@ -21,7 +22,8 @@ func spawnTower(offset = 0.0):
     rightTower.position.y += offset
     add_child(rightTower)
 
-    $timer.wait_time = 3.0 / 40.0 * GlobalState.playerSpeed
+    $timer.wait_time = 3.0 / (GlobalState.playerSpeed / 40.0)
+    print($timer.wait_time)
 
 func prespawnTowers():
     var offset := 0
