@@ -18,6 +18,6 @@ y_sort_enabled = true
 [node name="player" parent="sort" instance=ExtResource("2_tq7bi")]
 position = Vector2(0, 99)
 
-[node name="tower-spawner-right" parent="sort" instance=ExtResource("3_62q0x")]
+[node name="tower-spawner" parent="sort" instance=ExtResource("3_62q0x")]
 y_sort_enabled = true
 position = Vector2(0, -157)
