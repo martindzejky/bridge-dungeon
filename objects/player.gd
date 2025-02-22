@@ -55,5 +55,8 @@ func onCollision(area):
     if other.is_in_group('coin'):
         GlobalState.addCoin()
 
+    if other.is_in_group('heart'):
+        GlobalState.addPlayerHealth()
+
     if other.has_method('onHitPlayer'):
         other.onHitPlayer()

@@ -20,7 +20,7 @@ func _process(delta):
 
 func updatePlayerHealth(health: int):
     var previous := playerHealth
-    playerHealth = max(health, 0)
+    playerHealth = clampi(health, 0, 3)
 
     if playerHealth > previous:
         onPlayerHealed.emit()

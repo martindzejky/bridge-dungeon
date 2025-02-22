@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1j0ivbonxk7h"]
+
+[ext_resource type="Script" path="res://objects/heart.gd" id="1_rh65e"]
+[ext_resource type="Texture2D" uid="uid://b0mjrqlsme0p2" path="res://sprites/heart.png" id="2_4lkxd"]
+[ext_resource type="Script" path="res://scripts/moving-object.gd" id="4_y0m2o"]
+[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="5_nsh17"]
+[ext_resource type="AudioStream" uid="uid://cd7atbpe41k31" path="res://sounds/coin-random.tres" id="6_5e0f3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pfcs"]
+atlas = ExtResource("2_4lkxd")
+region = Rect2(8, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f4bvo"]
+radius = 9.0
+
+[node name="heart" type="Node2D" groups=["heart"]]
+script = ExtResource("1_rh65e")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -7)
+texture = SubResource("AtlasTexture_7pfcs")
+
+[node name="moving" type="Node" parent="."]
+process_mode = 1
+script = ExtResource("4_y0m2o")
+
+[node name="exit" type="Node" parent="."]
+script = ExtResource("5_nsh17")
+
+[node name="audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5e0f3")
+volume_db = -4.0
+
+[node name="collider" type="Area2D" parent="."]
+
+[node name="shape" type="CollisionShape2D" parent="collider"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_f4bvo")
+
+[connection signal="finished" from="audio" to="audio" method="queue_free"]

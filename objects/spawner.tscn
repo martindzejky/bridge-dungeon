@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bpxgy8l34s0t8"]
+[gd_scene load_steps=7 format=3 uid="uid://bpxgy8l34s0t8"]
 
 [ext_resource type="Script" path="res://objects/spawner.gd" id="1_7eehl"]
 [ext_resource type="PackedScene" uid="uid://fn3deb0umllx" path="res://objects/imp.tscn" id="2_kpfyt"]
 [ext_resource type="PackedScene" uid="uid://cygangvc8tn3e" path="res://objects/imper.tscn" id="3_5ov7k"]
 [ext_resource type="PackedScene" uid="uid://bsutu0164f0pk" path="res://objects/barrel.tscn" id="4_db0uq"]
 [ext_resource type="PackedScene" uid="uid://ulaq0ac0iwra" path="res://objects/coin.tscn" id="5_6pdy3"]
+[ext_resource type="PackedScene" uid="uid://c1j0ivbonxk7h" path="res://objects/heart.tscn" id="6_al8jv"]
 
 [node name="spawner" type="Node2D"]
 y_sort_enabled = true
@@ -13,6 +14,7 @@ impScene = ExtResource("2_kpfyt")
 imperScene = ExtResource("3_5ov7k")
 barrelScene = ExtResource("4_db0uq")
 coinScene = ExtResource("5_6pdy3")
+heartScene = ExtResource("6_al8jv")
 
 [node name="impTimer" type="Timer" parent="."]
 autostart = true
@@ -29,7 +31,12 @@ autostart = true
 wait_time = 12.0
 autostart = true
 
+[node name="heartTimer" type="Timer" parent="."]
+wait_time = 18.0
+autostart = true
+
 [connection signal="timeout" from="impTimer" to="." method="spawnImp"]
 [connection signal="timeout" from="imperTimer" to="." method="spawnImper"]
 [connection signal="timeout" from="barrelTimer" to="." method="spawnBarrel"]
 [connection signal="timeout" from="coinTimer" to="." method="spawnCoin"]
+[connection signal="timeout" from="heartTimer" to="." method="spawnHeart"]

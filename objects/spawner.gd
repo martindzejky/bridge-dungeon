@@ -19,6 +19,10 @@ const bounds := 70
 @export var coinTimerFrom := 8.0
 @export var coinTimerTo := 20.0
 
+@export var heartScene: PackedScene
+@export var heartTimerFrom := 16.0
+@export var heartTimerTo := 22.0
+
 
 func spawnImp():
     assert(impScene, 'Imp scene is not assigned!')
@@ -59,3 +63,13 @@ func spawnCoin():
     add_child(coin)
 
     $coinTimer.wait_time = randf_range(coinTimerFrom, coinTimerTo) / (GlobalState.playerSpeed / 40.0)
+
+
+func spawnHeart():
+    assert(heartScene, 'Heart scene is not assigned!')
+
+    var heart = heartScene.instantiate()
+    heart.position.x = randf_range(-bounds, bounds)
+    add_child(heart)
+
+    $heartTimer.wait_time = randf_range(heartTimerFrom, heartTimerTo) / (GlobalState.playerSpeed / 40.0)
