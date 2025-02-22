@@ -17,10 +17,6 @@ func _process(delta):
         position.x += direction * speed * delta
         position.x = clamp(position.x, -bounds, bounds);
 
-        # TODO: TEST
-        if Input.is_action_just_pressed('HIT'):
-            GlobalState.takePlayerHealth()
-
 func onPlayerHit():
     assert(hitSound, 'Missing hit sound!')
     assert(deadSound, 'Missing hit sound!')
@@ -56,5 +52,5 @@ func onCollision(area):
     if other.is_in_group('hit'):
         GlobalState.takePlayerHealth()
 
-    if other is Imp:
+    if other.has_method('onHitPlayer'):
         other.onHitPlayer()

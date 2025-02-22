@@ -8,13 +8,16 @@ signal onPlayerHit
 signal onPlayerHealed
 signal onPlayerDead
 
+# total distance run
+var distanceRun := 0.0
+
 func _process(delta):
     playerSpeed += delta * 2.0
+    distanceRun += delta * playerSpeed
 
 func updatePlayerHealth(health: int):
-    var previous := GlobalState.playerHealth
+    var previous := playerHealth
     playerHealth = max(health, 0)
-
 
     if playerHealth > previous:
         onPlayerHealed.emit()

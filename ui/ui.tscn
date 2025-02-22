@@ -11,19 +11,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="top" type="Control" parent="full"]
+[node name="top" type="VBoxContainer" parent="full"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="margin" type="MarginContainer" parent="full/top"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 16.0
-grow_horizontal = 2
+layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -31,6 +31,13 @@ theme_override_constants/margin_bottom = 4
 
 [node name="bar" type="HBoxContainer" parent="full/top/margin"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="hearts" parent="full/top/margin/bar" instance=ExtResource("1_58neh")]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="space" type="Control" parent="full/top/margin/bar"]
+layout_mode = 2
+size_flags_horizontal = 3
