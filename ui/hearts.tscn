@@ -1,24 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxybh7ybfi4li"]
+[gd_scene load_steps=3 format=3 uid="uid://dxybh7ybfi4li"]
 
 [ext_resource type="Script" path="res://ui/hearts.gd" id="1_reroq"]
-[ext_resource type="Texture2D" uid="uid://b0mjrqlsme0p2" path="res://sprites/heart.png" id="2_0hbpw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wx105"]
-atlas = ExtResource("2_0hbpw")
-region = Rect2(8, 0, 16, 16)
+[ext_resource type="PackedScene" uid="uid://dmepn3ambbsh7" path="res://ui/heart.tscn" id="2_da0be"]
 
 [node name="hearts" type="HBoxContainer"]
 theme_override_constants/separation = 4
 script = ExtResource("1_reroq")
+heartScene = ExtResource("2_da0be")
 
-[node name="heart" type="TextureRect" parent="."]
+[node name="heart" parent="." instance=ExtResource("2_da0be")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_wx105")
 
-[node name="heart2" type="TextureRect" parent="."]
+[node name="heart2" parent="." instance=ExtResource("2_da0be")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_wx105")
 
-[node name="heart3" type="TextureRect" parent="."]
+[node name="heart3" parent="." instance=ExtResource("2_da0be")]
 layout_mode = 2
-texture = SubResource("AtlasTexture_wx105")
