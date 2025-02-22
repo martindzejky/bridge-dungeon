@@ -1,32 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu44b508rxnrw"]
+[gd_scene load_steps=4 format=3 uid="uid://bu44b508rxnrw"]
 
-[ext_resource type="Texture2D" uid="uid://bwv0i2bwvrcrx" path="res://icon.svg" id="1_uin50"]
+[ext_resource type="Texture2D" uid="uid://xr2pjhgeiwey" path="res://sprites/bridge.png" id="1_b78y1"]
+[ext_resource type="PackedScene" uid="uid://dfnemgktx358p" path="res://objects/player.tscn" id="2_tq7bi"]
+[ext_resource type="PackedScene" uid="uid://dec1ttojfr1uv" path="res://objects/tower-spawner.tscn" id="3_62q0x"]
 
 [node name="main" type="Node"]
 
-[node name="floor" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="camera" type="Camera2D" parent="."]
 
-[node name="bridge" type="ColorRect" parent="floor"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -250.0
-offset_right = 100.0
-offset_bottom = 250.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0509804, 0.105882, 0.164706, 1)
+[node name="bridge" type="Sprite2D" parent="."]
+z_index = -10
+texture = ExtResource("1_b78y1")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(158, 174)
-texture = ExtResource("1_uin50")
+[node name="sort" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="player" parent="sort" instance=ExtResource("2_tq7bi")]
+position = Vector2(0, 99)
+
+[node name="tower-spawner-right" parent="sort" instance=ExtResource("3_62q0x")]
+y_sort_enabled = true
+position = Vector2(0, -157)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxdp6ilsfs1e3"]
+
+[ext_resource type="Texture2D" uid="uid://dnqtqu4d2yxqk" path="res://sprites/tower.png" id="1_fj2wv"]
+[ext_resource type="Script" path="res://objects/tower.gd" id="1_omlfx"]
+[ext_resource type="Script" path="res://objects/moving-object.gd" id="3_cmt5h"]
+
+[node name="tower" type="Node2D"]
+script = ExtResource("1_omlfx")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+texture = ExtResource("1_fj2wv")
+hframes = 3
+
+[node name="moving" type="Node2D" parent="."]
+script = ExtResource("3_cmt5h")

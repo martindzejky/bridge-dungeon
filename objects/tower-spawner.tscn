@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dec1ttojfr1uv"]
+
+[ext_resource type="Script" path="res://objects/tower-spawner.gd" id="1_qhy5v"]
+[ext_resource type="PackedScene" uid="uid://bxdp6ilsfs1e3" path="res://objects/tower.tscn" id="2_7g354"]
+
+[node name="tower-spawner" type="Node2D" node_paths=PackedStringArray("leftSpawn", "rightSpawn")]
+script = ExtResource("1_qhy5v")
+towerScene = ExtResource("2_7g354")
+leftSpawn = NodePath("left")
+rightSpawn = NodePath("right")
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="left" type="Marker2D" parent="."]
+position = Vector2(-90, 0)
+
+[node name="right" type="Marker2D" parent="."]
+position = Vector2(90, 0)
+
+[connection signal="timeout" from="timer" to="." method="spawnTower"]
