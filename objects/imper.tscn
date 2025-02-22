@@ -1,25 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cygangvc8tn3e"]
+[gd_scene load_steps=9 format=3 uid="uid://cygangvc8tn3e"]
 
 [ext_resource type="PackedScene" uid="uid://fn3deb0umllx" path="res://objects/imp.tscn" id="1_5nlci"]
 [ext_resource type="Texture2D" uid="uid://x8b64dcj3l41" path="res://sprites/imper.png" id="2_pu1l8"]
-
-[sub_resource type="Animation" id="Animation_r8piu"]
-resource_name = "running"
-length = 0.40001
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
+[ext_resource type="AudioStream" uid="uid://cvfysbytvjoaw" path="res://sounds/step.wav" id="3_ps4cd"]
 
 [sub_resource type="Animation" id="Animation_1odg4"]
 length = 0.001
@@ -39,6 +22,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_xsbub"]
 resource_name = "attack"
 length = 0.20001
+loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -52,6 +36,43 @@ tracks/0/keys = {
 "update": 1,
 "values": [4, 5]
 }
+
+[sub_resource type="Animation" id="Animation_r8piu"]
+resource_name = "running"
+length = 0.40001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("audioStep")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ps4cd")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ps4cd")
+}],
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hasg1"]
 _data = {
@@ -69,12 +90,16 @@ speed = 30.0
 [node name="sprite" parent="." index="0"]
 texture = ExtResource("2_pu1l8")
 
-[node name="animator" parent="." index="1"]
+[node name="animator" parent="." index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_hasg1")
 }
 
-[node name="moving" parent="." index="3"]
+[node name="audioStep" parent="." index="3"]
+volume_db = -12.0
+max_distance = 100.0
+
+[node name="moving" parent="." index="4"]
 forwardSpeed = 30.0
 
 [node name="shape" parent="collider" index="0"]

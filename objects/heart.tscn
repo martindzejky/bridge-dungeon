@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1j0ivbonxk7h"]
+[gd_scene load_steps=9 format=3 uid="uid://c1j0ivbonxk7h"]
 
 [ext_resource type="Script" path="res://objects/heart.gd" id="1_rh65e"]
 [ext_resource type="Texture2D" uid="uid://b0mjrqlsme0p2" path="res://sprites/heart.png" id="2_4lkxd"]
+[ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_odr5g"]
 [ext_resource type="Script" path="res://scripts/moving-object.gd" id="4_y0m2o"]
 [ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="5_nsh17"]
 [ext_resource type="AudioStream" uid="uid://cd7atbpe41k31" path="res://sounds/coin-random.tres" id="6_5e0f3"]
@@ -19,6 +20,10 @@ script = ExtResource("1_rh65e")
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
 texture = SubResource("AtlasTexture_7pfcs")
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_odr5g")
 
 [node name="moving" type="Node" parent="."]
 process_mode = 1

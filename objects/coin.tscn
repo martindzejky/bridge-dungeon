@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ulaq0ac0iwra"]
+[gd_scene load_steps=11 format=3 uid="uid://ulaq0ac0iwra"]
 
 [ext_resource type="Script" path="res://objects/coin.gd" id="1_56jkc"]
 [ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="2_8ap1i"]
 [ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_01fs7"]
 [ext_resource type="Texture2D" uid="uid://c81xiob2vtp07" path="res://sprites/blink.png" id="3_oh38x"]
+[ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="4_dkr1q"]
 [ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_taebt"]
 [ext_resource type="AudioStream" uid="uid://cd7atbpe41k31" path="res://sounds/coin-random.tres" id="5_6c7g4"]
 
@@ -45,6 +46,10 @@ explosiveness = 0.4
 randomness = 0.2
 visibility_rect = Rect2(-50, -50, 100, 100)
 local_coords = true
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_dkr1q")
 
 [node name="moving" type="Node" parent="."]
 process_mode = 1

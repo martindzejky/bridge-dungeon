@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bsutu0164f0pk"]
+[gd_scene load_steps=10 format=3 uid="uid://bsutu0164f0pk"]
 
 [ext_resource type="Script" path="res://objects/barrel.gd" id="1_migwd"]
 [ext_resource type="Texture2D" uid="uid://c6t1d8w54sjqb" path="res://sprites/barrel.png" id="1_symvl"]
+[ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_888r1"]
 [ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_m5wyx"]
 [ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_uorlk"]
 
@@ -53,6 +54,10 @@ script = ExtResource("1_migwd")
 position = Vector2(0, -7)
 texture = ExtResource("1_symvl")
 hframes = 6
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_888r1")
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {

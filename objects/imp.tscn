@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://fn3deb0umllx"]
+[gd_scene load_steps=12 format=3 uid="uid://fn3deb0umllx"]
 
 [ext_resource type="Script" path="res://objects/imp.gd" id="1_hyr3i"]
 [ext_resource type="Texture2D" uid="uid://b2vdojoovc3hy" path="res://sprites/imp.png" id="2_mwwf4"]
+[ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_6oud7"]
 [ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_44r0d"]
 [ext_resource type="AudioStream" uid="uid://cvfysbytvjoaw" path="res://sounds/step.wav" id="3_fu203"]
 [ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_2f1wd"]
@@ -93,6 +94,10 @@ script = ExtResource("1_hyr3i")
 position = Vector2(0, -7)
 texture = ExtResource("2_mwwf4")
 hframes = 6
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("3_6oud7")
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {

@@ -3,6 +3,6 @@
 [ext_resource type="AudioStream" uid="uid://dneiyj6uxa57q" path="res://sounds/hit.wav" id="1_1po4d"]
 
 [resource]
-random_pitch = 1.4
+random_pitch = 1.2
 streams_count = 1
 stream_0/stream = ExtResource("1_1po4d")

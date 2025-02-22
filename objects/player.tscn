@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfnemgktx358p"]
+[gd_scene load_steps=13 format=3 uid="uid://dfnemgktx358p"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_cnca8"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="1_k63ok"]
 [ext_resource type="AudioStream" uid="uid://7eck8hx86vly" path="res://sounds/hit-random.tres" id="2_rbvaa"]
 [ext_resource type="AudioStream" uid="uid://h1vcmg543v3e" path="res://sounds/dead.wav" id="3_55w4v"]
 [ext_resource type="AudioStream" uid="uid://cvfysbytvjoaw" path="res://sounds/step.wav" id="3_77jxp"]
+[ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="4_f5qoj"]
 
 [sub_resource type="Animation" id="Animation_sl2vi"]
 length = 0.001
@@ -124,6 +125,10 @@ process_mode = 3
 script = ExtResource("1_cnca8")
 hitSound = ExtResource("2_rbvaa")
 deadSound = ExtResource("3_55w4v")
+
+[node name="shadow" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("4_f5qoj")
 
 [node name="sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -7)
