@@ -5,6 +5,8 @@ class_name Player
 const bounds := 70
 
 @export var isBeingHit := false
+@export var hitSound: AudioStream
+@export var deadSound: AudioStream
 
 func _ready():
     GlobalState.onPlayerHit.connect(onPlayerHit)
@@ -20,6 +22,12 @@ func _process(delta):
             GlobalState.takePlayerHealth()
 
 func onPlayerHit():
+    assert(hitSound, 'Missing hit sound!')
+    assert(deadSound, 'Missing hit sound!')
+
+    $audioHit.stream = hitSound
+    $audioHit.play()
+
     get_tree().paused = true
     isBeingHit = true
 

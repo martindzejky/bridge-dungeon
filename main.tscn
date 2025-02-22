@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu44b508rxnrw"]
+[gd_scene load_steps=6 format=3 uid="uid://bu44b508rxnrw"]
 
 [ext_resource type="PackedScene" uid="uid://cm314qd0ikf8r" path="res://ui/ui.tscn" id="1_4qq6n"]
 [ext_resource type="Texture2D" uid="uid://xr2pjhgeiwey" path="res://sprites/bridge.png" id="1_b78y1"]
 [ext_resource type="PackedScene" uid="uid://dfnemgktx358p" path="res://objects/player.tscn" id="2_tq7bi"]
 [ext_resource type="PackedScene" uid="uid://dec1ttojfr1uv" path="res://objects/tower-spawner.tscn" id="3_62q0x"]
+[ext_resource type="PackedScene" uid="uid://bpxgy8l34s0t8" path="res://objects/spawner.tscn" id="5_nd4bj"]
 
 [node name="main" type="Node"]
 
@@ -24,3 +25,6 @@ position = Vector2(0, 99)
 [node name="tower-spawner" parent="sort" instance=ExtResource("3_62q0x")]
 y_sort_enabled = true
 position = Vector2(0, -157)
+
+[node name="spawner" parent="sort" instance=ExtResource("5_nd4bj")]
+position = Vector2(0, -164)
