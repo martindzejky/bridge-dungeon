@@ -1,10 +1,14 @@
 extends Node2D
 class_name Imp
 
+@export var speed := 10.0
+
 func _ready():
     var animator = $animator
     animator.play('running')
     animator.seek(randf(), true)
+
+    $moving.forwardSpeed = speed * (GlobalState.playerSpeed / 40.0)
 
 func onHitPlayer():
     process_mode = PROCESS_MODE_ALWAYS

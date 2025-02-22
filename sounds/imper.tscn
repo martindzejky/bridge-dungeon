@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cygangvc8tn3e"]
+
+[ext_resource type="PackedScene" uid="uid://fn3deb0umllx" path="res://objects/imp.tscn" id="1_5nlci"]
+[ext_resource type="Texture2D" uid="uid://x8b64dcj3l41" path="res://sprites/imper.png" id="2_pu1l8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gv3cw"]
+radius = 6.0
+
+[node name="imper" instance=ExtResource("1_5nlci")]
+speed = 30.0
+
+[node name="sprite" parent="." index="0"]
+texture = ExtResource("2_pu1l8")
+
+[node name="moving" parent="." index="3"]
+forwardSpeed = 30.0
+
+[node name="shape" parent="collider" index="0"]
+shape = SubResource("CircleShape2D_gv3cw")
