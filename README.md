@@ -1,5 +1,3 @@
-![cover image](./sprites/cover.png)
-
 # Bridge Dungeon
 
 Endless bridge runner in a dark dungeon. **Made in 1 day as a challenge**.
