@@ -60,7 +60,7 @@ script = ExtResource("4_taebt")
 
 [node name="audio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_6c7g4")
-volume_db = -4.0
+bus = &"Sounds"
 
 [node name="collider" type="Area2D" parent="."]
 

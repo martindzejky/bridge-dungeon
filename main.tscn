@@ -39,7 +39,7 @@ position = Vector2(0, -164)
 [node name="music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_qbnj1")
-volume_db = -8.0
 autoplay = true
+bus = &"Music"
 script = ExtResource("7_81bax")
 endingMusic = ExtResource("8_voyi7")
