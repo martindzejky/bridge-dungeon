@@ -57,11 +57,12 @@ hframes = 6
 
 [node name="shadow" type="Sprite2D" parent="."]
 z_index = -1
+scale = Vector2(1.43118, 1.35032)
 texture = ExtResource("3_888r1")
 
 [node name="animator" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xcjpf")
+&"": SubResource("AnimationLibrary_xcjpf")
 }
 autoplay = "running"
 
