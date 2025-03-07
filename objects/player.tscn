@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dfnemgktx358p"]
 
-[ext_resource type="Script" path="res://objects/player.gd" id="1_cnca8"]
+[ext_resource type="Script" uid="uid://yxyi741vhmyj" path="res://objects/player.gd" id="1_cnca8"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="1_k63ok"]
 [ext_resource type="AudioStream" uid="uid://7eck8hx86vly" path="res://sounds/hit-random.tres" id="2_rbvaa"]
 [ext_resource type="AudioStream" uid="uid://h1vcmg543v3e" path="res://sounds/dead.wav" id="3_55w4v"]
@@ -111,10 +111,10 @@ tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cwaed"]
 _data = {
-"RESET": SubResource("Animation_sl2vi"),
-"dead": SubResource("Animation_afh24"),
-"hit": SubResource("Animation_ytv4n"),
-"running": SubResource("Animation_2hsp0")
+&"RESET": SubResource("Animation_sl2vi"),
+&"dead": SubResource("Animation_afh24"),
+&"hit": SubResource("Animation_ytv4n"),
+&"running": SubResource("Animation_2hsp0")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmiyj"]

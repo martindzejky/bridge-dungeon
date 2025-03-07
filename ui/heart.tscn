@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmepn3ambbsh7"]
 
 [ext_resource type="Texture2D" uid="uid://b0mjrqlsme0p2" path="res://sprites/heart.png" id="1_gamp1"]
-[ext_resource type="Script" path="res://ui/heart.gd" id="2_cjcj4"]
+[ext_resource type="Script" uid="uid://r02c7oj8frjo" path="res://ui/heart.gd" id="2_cjcj4"]
 [ext_resource type="PackedScene" uid="uid://be0btltln8w80" path="res://objects/broken-heart.tscn" id="3_p8w7h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wx105"]

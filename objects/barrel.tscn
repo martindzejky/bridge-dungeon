@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsutu0164f0pk"]
 
-[ext_resource type="Script" path="res://objects/barrel.gd" id="1_migwd"]
+[ext_resource type="Script" uid="uid://dwdanknjkmryy" path="res://objects/barrel.gd" id="1_migwd"]
 [ext_resource type="Texture2D" uid="uid://c6t1d8w54sjqb" path="res://sprites/barrel.png" id="1_symvl"]
 [ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_888r1"]
-[ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_m5wyx"]
-[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_uorlk"]
+[ext_resource type="Script" uid="uid://dm1miqfm40awx" path="res://scripts/moving-object.gd" id="3_m5wyx"]
+[ext_resource type="Script" uid="uid://b28qi4efm5ufa" path="res://scripts/destroy-on-exit.gd" id="4_uorlk"]
 
 [sub_resource type="Animation" id="Animation_u4cwy"]
 length = 0.001
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcjpf"]
 _data = {
-"RESET": SubResource("Animation_u4cwy"),
-"destroy": SubResource("Animation_1pxa4")
+&"RESET": SubResource("Animation_u4cwy"),
+&"destroy": SubResource("Animation_1pxa4")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58ppb"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c1j0ivbonxk7h"]
 
-[ext_resource type="Script" path="res://objects/heart.gd" id="1_rh65e"]
+[ext_resource type="Script" uid="uid://ceqlkwtt7gvf7" path="res://objects/heart.gd" id="1_rh65e"]
 [ext_resource type="Texture2D" uid="uid://b0mjrqlsme0p2" path="res://sprites/heart.png" id="2_4lkxd"]
 [ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_odr5g"]
-[ext_resource type="Script" path="res://scripts/moving-object.gd" id="4_y0m2o"]
-[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="5_nsh17"]
+[ext_resource type="Script" uid="uid://dm1miqfm40awx" path="res://scripts/moving-object.gd" id="4_y0m2o"]
+[ext_resource type="Script" uid="uid://b28qi4efm5ufa" path="res://scripts/destroy-on-exit.gd" id="5_nsh17"]
 [ext_resource type="AudioStream" uid="uid://cd7atbpe41k31" path="res://sounds/coin-random.tres" id="6_5e0f3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7pfcs"]

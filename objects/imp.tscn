@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://fn3deb0umllx"]
 
-[ext_resource type="Script" path="res://objects/imp.gd" id="1_hyr3i"]
+[ext_resource type="Script" uid="uid://dfiusbcdpb76n" path="res://objects/imp.gd" id="1_hyr3i"]
 [ext_resource type="Texture2D" uid="uid://b2vdojoovc3hy" path="res://sprites/imp.png" id="2_mwwf4"]
 [ext_resource type="Texture2D" uid="uid://kxoik8u8q7u6" path="res://sprites/shadow.png" id="3_6oud7"]
-[ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_44r0d"]
-[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_2f1wd"]
+[ext_resource type="Script" uid="uid://dm1miqfm40awx" path="res://scripts/moving-object.gd" id="3_44r0d"]
+[ext_resource type="Script" uid="uid://b28qi4efm5ufa" path="res://scripts/destroy-on-exit.gd" id="4_2f1wd"]
 
 [sub_resource type="Animation" id="Animation_cqvo6"]
 length = 0.001
@@ -59,9 +59,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ma3h"]
 _data = {
-"RESET": SubResource("Animation_cqvo6"),
-"attack": SubResource("Animation_2wk6h"),
-"running": SubResource("Animation_u43qf")
+&"RESET": SubResource("Animation_cqvo6"),
+&"attack": SubResource("Animation_2wk6h"),
+&"running": SubResource("Animation_u43qf")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q8gsn"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c8ry4fga0b0kl"]
 
-[ext_resource type="Script" path="res://ui/coins.gd" id="1_kpwxj"]
+[ext_resource type="Script" uid="uid://b611357bp05kh" path="res://ui/coins.gd" id="1_kpwxj"]
 [ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="2_wvokg"]
 
 [node name="coins" type="HBoxContainer"]

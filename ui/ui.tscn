@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c8ry4fga0b0kl" path="res://ui/coins.tscn" id="2_6talx"]
 [ext_resource type="Texture2D" uid="uid://cns17vwcxmgwe" path="res://sprites/player.png" id="2_wwd8o"]
 [ext_resource type="Texture2D" uid="uid://by8kda7wtnn6b" path="res://sprites/coin.png" id="3_vbwm0"]
-[ext_resource type="Script" path="res://ui/end.gd" id="3_ygh2h"]
+[ext_resource type="Script" uid="uid://bs8svy6bp556v" path="res://ui/end.gd" id="3_ygh2h"]
 [ext_resource type="Texture2D" uid="uid://c81xiob2vtp07" path="res://sprites/blink.png" id="6_54ve0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v3k35"]
@@ -43,8 +43,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c0g62"]
 _data = {
-"RESET": SubResource("Animation_qntpk"),
-"fade": SubResource("Animation_svbr4")
+&"RESET": SubResource("Animation_qntpk"),
+&"fade": SubResource("Animation_svbr4")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioqgx"]

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxdp6ilsfs1e3"]
 
 [ext_resource type="Texture2D" uid="uid://dnqtqu4d2yxqk" path="res://sprites/tower.png" id="1_fj2wv"]
-[ext_resource type="Script" path="res://objects/tower.gd" id="1_omlfx"]
-[ext_resource type="Script" path="res://scripts/moving-object.gd" id="3_cmt5h"]
-[ext_resource type="Script" path="res://scripts/destroy-on-exit.gd" id="4_1onc3"]
+[ext_resource type="Script" uid="uid://enhmo4atrq3f" path="res://objects/tower.gd" id="1_omlfx"]
+[ext_resource type="Script" uid="uid://dm1miqfm40awx" path="res://scripts/moving-object.gd" id="3_cmt5h"]
+[ext_resource type="Script" uid="uid://b28qi4efm5ufa" path="res://scripts/destroy-on-exit.gd" id="4_1onc3"]
 
 [node name="tower" type="Node2D"]
 script = ExtResource("1_omlfx")
