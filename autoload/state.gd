@@ -34,11 +34,10 @@ func updatePlayerHealth(health: int):
         onPlayerHit.emit()
 
         # decrease the speed a little
-        if playerSpeed <= 80:
-            playerSpeed = 40
+        if playerSpeed > 50:
+            playerSpeed -= 5
         else:
-            var diff := playerSpeed - 40
-            playerSpeed = 40 + diff * 0.4
+            playerSpeed -= 1
 
     if playerHealth == 0:
         onPlayerDead.emit()
